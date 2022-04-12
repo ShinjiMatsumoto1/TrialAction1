@@ -1,17 +1,34 @@
-# workflowの名前
+
 name: Sample actions
 
-# トリガーの設定
 on:
   push:
-    branches: main # mainブランチの場合はmainに変更
 
 jobs:
-  build:
-    runs-on: ubuntu-latest # 実行環境の設定
-
+  first_job:
+    runs-on: windows-2019
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world! # Hello, world!と出力する
+      - name: Display hello world pwsh
+        run: |
+          write-host "hello world pwsh"
+          $PSVersionTable
+        shell: pwsh
+
+      - name: Display hello world powershell
+        run: |
+          write-host "hello world pwsh"
+          $PSVersionTable
+        shell: powershell
+
+      - name: run ps1File cmd
+        run: powershell -NoProfile -ExecutionPolicy Unrestricted ./helloworld.ps1
+        shell: cmd
+
+      - name: run ps1File pwsh
+        run: powershell -NoProfile -ExecutionPolicy Unrestricted ./helloworld.ps1
+        shell: pwsh
+
+
