@@ -2,7 +2,9 @@
 name: Sample actions
 
 on:
-  push:
+  schedule:
+    - cron: '30 2 * * *'
+
 
 jobs:
   first_job:
