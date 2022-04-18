@@ -1,8 +1,9 @@
 
 name: Test PowerShell on Ubuntu
 #on: [ workflow_dispatch ]
-schedule:
-  - cron: '20 05 * * *'
+on:
+  schedule:
+    - cron: '20 05 * * *'
 
 jobs:
   pester-test:
