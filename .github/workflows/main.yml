@@ -10,10 +10,9 @@ jobs:
   first_job:
     runs-on: windows-2019
     steps:
-      - powershell: |
-        Install-Module -Name Pester -Force
-        Invoke-Pester -EnableExit -OutputFile ./test-results.xml -OutputFormat NUnitXml
-
+#       - powershell: |
+#         Install-Module -Name Pester -Force
+#         Invoke-Pester -EnableExit -OutputFile ./test-results.xml -OutputFormat NUnitXml
       - name: Checkout
         uses: actions/checkout@v2
 
