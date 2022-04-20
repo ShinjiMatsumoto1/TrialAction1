@@ -1,9 +1,6 @@
 
 name: Test PowerShell on Ubuntu
 on: [ workflow_dispatch ]
-#on:
-#  schedule:
-#    - cron: '00 06 * * *'
 
 jobs:
   pester-test:
@@ -18,5 +15,5 @@ jobs:
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
-#           Invoke-Pester Unit.Tests.ps1 -Passthru
           Invoke-Pester Unit.Tests.ps1 -OutputFile ./test-results.xml -OutputFormat NUnitXml
+#           Invoke-Pester Unit.Tests.ps1 -Passthru
