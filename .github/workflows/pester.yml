@@ -10,9 +10,6 @@ jobs:
     name: Pester test
     runs-on: ubuntu-latest
     steps:
-      - powershell: |
-        Install-Module -Name Pester -Force
-        Invoke-Pester -EnableExit -OutputFile ./test-results.xml -OutputFormat NUnitXml
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Perform a Pester test from the command-line
