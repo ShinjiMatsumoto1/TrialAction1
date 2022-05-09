@@ -1,6 +1,8 @@
 
 name: Test PowerShell on Ubuntu
 on: [ workflow_dispatch ]
+env:
+  MY_SECURET_HOGE1: ${{secrets.MY_SECURET_HOGE1}}
 
 jobs:
   pester-test:
@@ -15,5 +17,9 @@ jobs:
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
-          Invoke-Pester Unit.Tests.ps1 -OutputFile ./test-results.xml -OutputFormat NUnitXml
-#           Invoke-Pester Unit.Tests.ps1 -Passthru
+          Invoke-Pester Unit.Tests.ps1 -Passthru
+#          Invoke-Pester Unit.Tests.ps1 -OutputFile ./test-results.xml -OutputFormat NUnitXml
+      - name: sample scr word out
+        shell: powershell
+        run: writ-host "output"
+             $MY_SECURET_HOGE1
