@@ -21,5 +21,6 @@ jobs:
 #          Invoke-Pester Unit.Tests.ps1 -OutputFile ./test-results.xml -OutputFormat NUnitXml
       - name: sample scr word out
         shell: pwsh
-        run: write-host "output:"
+        run: |
+            write-host "output:"
              $MY_SECURET_HOGE1
