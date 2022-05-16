@@ -13,11 +13,21 @@ on:
 jobs:
   add-comment:
     if: github.event.inputs.label-name == 'help-wanted'          # 変数名を変える
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: windows-2019
     steps:
-      - name: Add comment
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: ${{ github.event.inputs.issue-number }}  # 変数名を変える
-          body: |
-            This issue is available for anyone to work on. **Make sure to reference this issue in your pull request.** :sparkles: Thank you for your contribution! :sparkles:
+      # - name: Add comment
+      #   uses: peter-evans/create-or-update-comment@v1
+      #   with:
+      #     issue-number: ${{ github.event.inputs.issue-number }}  # 変数名を変える
+      #     body: |
+      #       This issue is available for anyone to work on. **Make sure to reference this issue in your pull request.** :sparkles: Thank you for your contribution! :sparkles:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Display hello world powershell
+        run: |
+          write-host "hello world pwsh"
+          $PSVersionTable
+        shell: powershell
+
