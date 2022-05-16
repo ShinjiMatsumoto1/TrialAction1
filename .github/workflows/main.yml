@@ -3,7 +3,7 @@ name: Sample actions
 
 on:
   schedule:
-    - cron: '45 02 * * *'
+    - cron: '45 2 1 * *'
 
 
 jobs:
