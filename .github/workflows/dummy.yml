@@ -3,9 +3,9 @@ name: Dummy for test  # ここはダミーのままにしておく
 on:
   workflow_dispatch:
     inputs:           # イベントの値を手入力するようにする
-      issue-number:
-        description: issue number
-        required: true
+      # issue-number:
+      #   description: issue number
+      #   required: true
       label-name:
         description: label name
         required: true
