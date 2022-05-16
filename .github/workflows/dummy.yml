@@ -31,3 +31,7 @@ jobs:
           $PSVersionTable
         shell: powershell
 
+      - name: run ps1File powershell
+        run: powershell -NoProfile -ExecutionPolicy Unrestricted ./helloworld.ps1
+        shell: powershell
+
