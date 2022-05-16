@@ -1,0 +1,21 @@
+name: develop
+
+on:
+  push:
+    branches:
+      - testaction
+
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+
+    - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: TestAction hello world powershell
+        run: |
+          write-host "hello world pwsh"
+          $PSVersionTable
+        shell: powershell
