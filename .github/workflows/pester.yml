@@ -1,10 +1,6 @@
 
 name: Test PowerShell on Ubuntu
 on: [ workflow_dispatch ]
-    inputs:
-      issue-number:
-        description: issue number
-        required: true
 env:
   MY_SECURET_HOGE1: ${{secrets.MY_SECURET_HOGE1}}
 
@@ -25,7 +21,6 @@ jobs:
 #          Invoke-Pester Unit.Tests.ps1 -OutputFile ./test-results.xml -OutputFormat NUnitXml
       - name: sample scr word out
         shell: pwsh
-          if: github.event.inputs.issue-number == '1'
         run: |
             write-host "output:"
              $MY_SECURET_HOGE1
