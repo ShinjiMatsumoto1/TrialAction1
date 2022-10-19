@@ -35,6 +35,14 @@ jobs:
         run: powershell -NoProfile -ExecutionPolicy Unrestricted ./helloworld.ps1
         shell: powershell
 
-      - name: Adding markdown
+      # - name: Adding markdown
+      #   run: |
+      #     "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Generate list using Markdown
         run: |
-          "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+          "This is the lead in sentence for the list" >> $env:GITHUB_STEP_SUMMARY
+          "" >> $env:GITHUB_STEP_SUMMARY # this is a blank line
+          "- Lets add a bullet point" >> $env:GITHUB_STEP_SUMMARY
+          "- Lets add a second bullet point" >> $env:GITHUB_STEP_SUMMARY
+          "- How about a third one?" >> $env:GITHUB_STEP_SUMMARY
