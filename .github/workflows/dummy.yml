@@ -36,4 +36,5 @@ jobs:
         shell: powershell
 
       - name: Adding markdown
-        run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
+        run: |
+          "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
