@@ -35,3 +35,5 @@ jobs:
         run: powershell -NoProfile -ExecutionPolicy Unrestricted ./helloworld.ps1
         shell: powershell
 
+      - name: Adding markdown
+        run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
